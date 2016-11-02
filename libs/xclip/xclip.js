@@ -11,7 +11,7 @@ class Xclip extends Base {
     super();
   }
 
-  pasteText() {
+  pasteText(cb) {
 
     const cmd = 'xclip -sel clip -o';
     return new Promise((resolve, reject) => {
@@ -24,10 +24,11 @@ class Xclip extends Base {
           reject(err);
         }
       });
-    });
+    })
+    .asCallback(cb);
   }
 
-  copyText(text) {
+  copyText(text, cb) {
 
     const cmd = `echo ${text} | xclip -sel clip`;
     return new Promise((resolve, reject) => {
@@ -40,7 +41,8 @@ class Xclip extends Base {
           reject(err);
         }
       });
-    });
+    })
+    .asCallback(cb);
   }
 }
 

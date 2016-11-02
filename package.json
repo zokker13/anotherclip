@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "bindings": "^1.2.1",
     "bluebird": "^3.4.6",
+    "nan": "^2.4.0",
     "underscore": "^1.8.3"
   }
 }
